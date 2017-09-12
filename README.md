@@ -1,4 +1,4 @@
-# PostCSS Utils [![Build Status][travis-img]][travis]
+# PostCSS Simple Utils
 
 [PostCSS] plugin to help you create functional fragments quickly via at-rules.
 
