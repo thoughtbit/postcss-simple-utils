@@ -2005,6 +2005,10 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "http://registry.npm.taobao.org/pluralize/download/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
+postcss-value-parser@^3.3.0:
+  version "3.3.0"
+  resolved "http://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
+
 postcss@^6.0.5:
   version "6.0.11"
   resolved "http://registry.npm.taobao.org/postcss/download/postcss-6.0.11.tgz#f48db210b1d37a7f7ab6499b7a54982997ab6f72"

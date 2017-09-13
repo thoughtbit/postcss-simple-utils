@@ -5,12 +5,12 @@
 ## Syntax
 
 ### clearfix
-`@utils-clearfix;`
+`@util clearfix;`
 
 ```css
 /* before */
 .clearfix {
-  @utils-clearfix;
+  @util clearfix;
 }
 
 /* after */
@@ -27,12 +27,12 @@
 ```
 
 ### user select
-`@utils-user-select [none|text];`
+`@util user-select([none|text]);`
 
 ```css
 /* before */
 .usn {
-  @utils-user-select none;
+  @util user-select(none);
 }
 
 /* after */

@@ -13,7 +13,8 @@
   "homepage": "https://github.com/thoughtbit/postcss-simple-utils#readme",
   "dependencies": {
     "humps": "^1.1.0",
-    "postcss": "^6.0.5"
+    "postcss": "^6.0.5",
+    "postcss-value-parser": "^3.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

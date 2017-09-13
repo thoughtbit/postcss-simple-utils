@@ -1,6 +1,7 @@
 import postcss from 'postcss';
-import utils from './utils';
+import parser from 'postcss-value-parser';
 import humps from 'humps';
+import utils from './utils';
 
 let ampInsertedNodes = {};
 
@@ -47,23 +48,38 @@ const applyRuleSetToNode = (ruleSet, node, currentAtRule) => {
   });
 };
 
-module.exports = postcss.plugin('postcss-utils', (opts) => {
-  let options = Object.assign({}, opts);
-  // let noJsSelector = options.noJsSelector || '.no-js';
-  // let ie8 = options.ie8 || false;
+const stringifyNode = (node) => {
+  if (node.type === 'function') {
+    return (node.before || '') + node.value +
+      '(' + node.nodes.map(stringifyNode).join('') + ')' +
+      (node.after || '');
+  } else {
+    return (node.before || '') + node.value + (node.after || '');
+  }
+}
 
-  console.log(options);
-  
+module.exports = postcss.plugin('postcss-simple-utils', () => {
   return (root) => {
-    root.walkAtRules(/^utils-/i, (rule) => {
-      let ruleName = rule.name.trim().replace('utils-', '');
+    root.walkAtRules('util', (rule) => {
+      let ruleName = rule.params.split(/\(/, 1)[0].trim();
       let ruleFun = utils[humps.camelize(ruleName)];
-
       if (ruleFun) {
-        let params = rule.params.trim() ? rule.params.trim().split(' ') : [];
-
+        let params = [];
+        let parsed = parser(rule.params);
+        parsed.nodes.forEach(function (node) {
+          if (node.type === 'function') {
+            node.nodes.forEach(function (i) {
+              if (i.type === 'word' || i.type === 'function' ||
+                i.type === 'string') {
+                  params.push(stringifyNode(i));
+              }
+            });
+          }
+        });
         applyRuleSetToNode(ruleFun(...params), rule.parent, rule);
         rule.remove();
+      } else {
+        throw rule.error('Unknown utility ' + ruleName);
       }
     });
   };
