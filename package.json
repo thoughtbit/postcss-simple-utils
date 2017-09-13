@@ -14,7 +14,8 @@
   "dependencies": {
     "humps": "^1.1.0",
     "postcss": "^6.0.5",
-    "postcss-value-parser": "^3.3.0"
+    "postcss-value-parser": "^3.3.0",
+    "lodash.toarray": "^4.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

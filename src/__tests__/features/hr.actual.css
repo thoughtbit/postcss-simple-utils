@@ -1,0 +1,8 @@
+.hr {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0;
+  font-size: 0;
+  border-bottom: 1px solid #cdcdcd;
+}

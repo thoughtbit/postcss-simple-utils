@@ -1,0 +1,7 @@
+.disabled {
+  background-color: #ccc;
+  border-color: #f00;
+  color: #333;
+  cursor: default;
+  pointer-events: none;
+}

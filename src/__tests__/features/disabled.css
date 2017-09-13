@@ -1,0 +1,3 @@
+.disabled {
+  @util disabled(#ccc, #f00, #333);
+}

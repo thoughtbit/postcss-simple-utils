@@ -1,0 +1,27 @@
+.arrow {
+  @util triangle();
+}
+.arrow-top {
+  @util triangle('iso', 'top', '#f00', 20, 10);
+}
+.arrow-bottom {
+  @util triangle('iso', 'bottom', '#f00', 20, 10);
+}
+.arrow-left {
+  @util triangle('iso', 'left', '#f00', 20, 10);
+}
+.arrow-right {
+  @util triangle('iso', 'right', '#f00', 20, 10);
+}
+.arrow-top-left {
+  @util triangle('iso', 'topLeft', '#f00', 20, 10);
+}
+.arrow-top-right {
+  @util triangle('iso', 'topRight', '#f00', 20, 10);
+}
+.arrow-bottom-left {
+  @util triangle('iso', 'bottomLeft', '#f00', 20, 10);
+}
+.arrow-bottom-right {
+  @util triangle('iso', 'bottomRight', '#f00', 20, 10);
+}

@@ -1,0 +1,8 @@
+.vam-box {
+}
+.vam-box:after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle
+}

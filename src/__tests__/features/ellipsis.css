@@ -1,0 +1,6 @@
+.ellipsis {
+  @util ellipsis;
+}
+.ellipsis2 {
+  @util ellipsis(3);
+}

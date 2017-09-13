@@ -6,7 +6,18 @@ import plugin from '..'
 
 const features = [
   'clearfix',
-  'userSelect',
+  'clear',
+  'user-select',
+  'ellipsis',
+  'text-hide',
+  'wrap',
+  'nowrap',
+  'hr',
+  'irt',
+  'disabled',
+  'vertical-center',
+  'select-no-appearance',
+  'triangle',
 ];
 
 features.forEach((name) => {
@@ -25,4 +36,3 @@ features.forEach((name) => {
     });
   });
 });
-
