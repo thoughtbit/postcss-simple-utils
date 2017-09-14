@@ -18,6 +18,8 @@ const features = [
   'vertical-center',
   'select-no-appearance',
   'triangle',
+  'rect',
+  'circle',
 ];
 
 features.forEach((name) => {

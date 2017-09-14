@@ -360,6 +360,80 @@
 }
 ```
 
+ ### rect
+ 
+ `@util rect([width],[height],[background-color]);`
+
+```css
+/* before */
+.rect-a {
+  @util rect(30,50,'#ff0');
+}
+.rect-b {
+  @util rect(30,*,'#ff0');
+}
+.rect-c {
+  @util rect(*,50,'#ff0');
+}
+.rect-d {
+  @util rect(*,*,'#ff0');
+}
+.rect-e {
+  @util rect(30,50,*);
+}
+
+/* after */
+.rect-a {
+  width: 30px;
+  height: 50px;
+  background-color: #ff0;
+}
+.rect-b {
+  width: 30px;
+  background-color: #ff0;
+}
+.rect-c {
+  height: 50px;
+  background-color: #ff0;
+}
+.rect-d {
+  background-color: #ff0;
+}
+.rect-e {
+  width: 30px;
+  height: 50px;
+}
+
+```
+
+### circle
+
+`@util circle([diameter],[radius],[background-color]);`
+
+```css
+/* before */
+.circle-a {
+  @util circle(50, '#ff0');
+}
+.circle-b {
+  @util circle(50, *);
+}
+
+/* after */
+.circle-a {
+  width: 50px;
+  height: 50px;
+  background-color: #ff0;
+  border-radius: 50%;
+}
+.circle-b {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+```
+
 ## 参考
 - https://github.com/baiyaaaaa/postcss-utils
 - https://github.com/ismamz/postcss-utilities

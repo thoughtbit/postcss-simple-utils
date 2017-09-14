@@ -308,4 +308,35 @@ export default {
 
     return rules;
   },
+  // 矩形
+  rect(width=10, height=10, bgc='#eee') {
+    let rules = {};
+    if (width !== '*') {
+      rules['width'] = `${width}px`;
+    }
+    if (height !== '*') {
+      rules['height'] = `${height}px`;
+    }
+    if (bgc !== '*') {
+      rules['background-color'] = bgc;
+    }
+    return rules;
+  },
+  // 圆形
+  circle(diameter=100,bgc) {
+    let rules = {};
+
+    if (diameter !== '*') {
+      rules['width'] = `${diameter}px`;
+      rules['height'] = `${diameter}px`;
+    }
+
+    if (bgc !== '*') {
+      rules['background-color'] = bgc;
+    }
+
+    rules['border-radius'] = '50%';
+
+    return rules;
+  },
 };

@@ -1,0 +1,6 @@
+.circle-a {
+  @util circle(50, '#ff0');
+}
+.circle-b {
+  @util circle(50, *);
+}

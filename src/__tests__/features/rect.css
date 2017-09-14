@@ -1,0 +1,15 @@
+.rect-a {
+  @util rect(30,50,'#ff0');
+}
+.rect-b {
+  @util rect(30,*,'#ff0');
+}
+.rect-c {
+  @util rect(*,50,'#ff0');
+}
+.rect-d {
+  @util rect(*,*,'#ff0');
+}
+.rect-e {
+  @util rect(30,50,*);
+}
