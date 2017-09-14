@@ -33,6 +33,8 @@ features.forEach((name) => {
 
       t.equal(actualCSS, expectedCSS);
       t.end();
+    }).catch((err) => {
+      console.error(err);
     });
   });
 });
