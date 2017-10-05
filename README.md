@@ -138,6 +138,58 @@
 }
 ```
 
+### center
+
+- `type` 类型  transform[默认值，css3变换] flexbox[flex布局] ie[IE9-]
+- `width` 宽度
+- `height` 高度
+
+`@util center([type=transform|flexbox|ie], [width], [height]);`
+
+```css
+/* before */
+
+/* position + transform */
+.center {
+  @util center;
+}
+
+/* position + margin */
+.center-ie {
+  @util center('ie8', 200, 280);
+}
+
+/* flex */
+.center-flex {
+  @util center('flexbox');
+}
+
+/* after */
+
+/* position + transform */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* position + margin */
+.center-ie {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* flex */
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
 ### vertical center
 
 `@util vertical-center;`
@@ -156,6 +208,24 @@
   content: "";
   height: 100%;
   vertical-align: middle
+}
+```
+
+### center-block
+
+`@util center-block;`
+
+```css
+/* before */
+.center-block {
+  @util center-block;
+}
+
+/* after */
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 ```
 

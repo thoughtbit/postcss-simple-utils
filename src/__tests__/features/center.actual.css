@@ -1,0 +1,22 @@
+/* position + transform */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* position + margin */
+.center-ie {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* flex */
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

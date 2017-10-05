@@ -79,6 +79,34 @@ export default {
       'pointer-events': 'none',
     };
   },
+  /* 水平垂直居中 */
+  center(type = 'transform', width =100, height=100) {
+    let rules = {};
+
+    if (type === 'ie') {
+      if (width !== '*') {
+        rules['width'] = `${width}px`;
+      }
+      if (height !== '*') {
+        rules['height'] = `${height}px`;
+      }
+      rules['position'] = 'absolute';
+      rules['top'] = '50%';
+      rules['left'] = '50%';
+      rules['margin-top'] = `-${width/2}px`;
+      rules['margin-left'] = `-${height/2}px`;
+    } else if (type === 'flexbox') {
+      rules['display'] = 'flex';
+      rules['align-items'] = 'center';
+      rules['justify-content'] = 'center';
+    } else {
+      rules['position'] = 'absolute';
+      rules['top'] = '50%';
+      rules['left'] = '50%';
+      rules['transform'] = 'translate(-50%, -50%)';
+    }
+    return rules;
+  },
   /* 垂直居中 */
   verticalCenter() {
     return {
@@ -88,6 +116,14 @@ export default {
         'height': '100%',
         'vertical-align': 'middle',
       },
+    };
+  },
+  /* 水平居中 */
+  centerBlock() {
+    return {
+      'display': 'block',
+      'margin-left': 'auto',
+      'margin-right': 'auto',
     };
   },
   /* 隐藏<select>元素的下拉箭头 */
@@ -217,7 +253,7 @@ export default {
         switch(type){
           /* 全等三角形 */
 					case 'equ':
-						if(direction == 'top' || direction == 'bottom'){
+						if(direction === 'top' || direction === 'bottom'){
 							let equHeight = (Math.sqrt(3)/2*width).toFixed(1);
 							switch(lengthDirections[key]){
 								case 'width':
@@ -233,7 +269,7 @@ export default {
 									lengths[key] = `${width/2}px`;
 									break;
 							}
-						}else if(direction == 'left' || direction == 'right'){
+						}else if(direction === 'left' || direction === 'right'){
 							let equHeight = (Math.sqrt(3)/2*height).toFixed(1);
 							switch(lengthDirections[key]){
 								case 'width':

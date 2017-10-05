@@ -1,0 +1,14 @@
+/* position + transform */
+.center {
+  @util center;
+}
+
+/* position + margin */
+.center-ie {
+  @util center('ie8', 200, 280);
+}
+
+/* flex */
+.center-flex {
+  @util center('flexbox');
+}
